@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, TouchableWithoutFeedback, View, LayoutAnimation } from 'react-native';
 import { connect } from 'react-redux';
-import { CardSection } from './common';
+import { HoleCardSection } from './common';
 import * as actions from '../actions';
 import _ from 'lodash';
 
@@ -16,14 +16,13 @@ class PlayerInfo extends Component {
       if(expanded) {
         console.log('Before: ' + player.scoreArray);
         for (let i = 0; i < player.scoreArray.length; i ++) {
-        console.log('After: ' + player.scoreArray[i]);
-        // return (
-        //   <CardSection>
-        //     <Text>
-        //       Hole {player.scoreArray[i] + 1}
-        //     </Text>
-        //   </CardSection>
-        // )
+        return (
+          <CardSection>
+            <Text>
+              Hole {player.scoreArray[i]}
+            </Text>
+          </CardSection>
+        )
       }
     }
   }
@@ -38,15 +37,23 @@ class PlayerInfo extends Component {
     return (
       <TouchableWithoutFeedback onPress={() => this.props.selectPlayer(id)}>
         <View>
-          <CardSection>
-            <Text>
-              {name} - {this.totalScore(scoreArray) - 48}
+          <HoleCardSection>
+            <Text style={styles.playerTextStyle}>{name}</Text>
+            <Text style={styles.playerTextStyle}>
+              {this.totalScore(scoreArray) - 48}
             </Text>
-          </CardSection>
+          </HoleCardSection>
           {this.renderScores()}
         </View>
       </TouchableWithoutFeedback>
     );
+  }
+}
+
+const styles = {
+  playerTextStyle: {
+    fontSize: 24,
+    fontWeight: '400',
   }
 }
 
