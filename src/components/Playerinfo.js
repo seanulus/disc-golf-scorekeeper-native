@@ -7,18 +7,23 @@ import _ from 'lodash';
 
 class PlayerInfo extends Component {
   componentWillUpdate() {
-    LayoutAnimation.spring();
+    LayoutAnimation.easeInEaseOut();
   }
 
   renderScores() {
     const { player, expanded } = this.props;
 
-    if(expanded) {
-      return player.scoreArray.map(score =>
-        <CardSection>
-          <Text>Hole {score[index] + 1}  score</Text>
-        </CardSection>
-      );
+      if(expanded) {
+        for (let i = 0; i <= player.scoreArray.length; i ++) {
+
+        return (
+          <CardSection>
+            <Text>
+              Hole {player.scoreArray[i] + 1}
+            </Text>
+          </CardSection>
+        )
+      }
     }
   }
 

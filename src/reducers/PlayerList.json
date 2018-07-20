@@ -1,22 +1,22 @@
 [
   {
     "id": 0,
-    "player": "Sean",
+    "name": "Sean",
     "scoreArray": [3, 4, 3, 5, 3, 2, 3, 4, 4, 2, 3, 3, 2, 5, 6, 4, 3, 3]
   },
   {
-    "id": 0,
-    "player": "Aaron",
+    "id": 1,
+    "name": "Aaron",
     "scoreArray": [3, 4, 3, 5, 3, 2, 3, 4, 4, 2, 3, 3, 2, 5, 6, 4, 3, 3]
   },
   {
-    "id": 0,
-    "player": "Sam",
+    "id": 2,
+    "name": "Sam",
     "scoreArray": [3, 4, 3, 5, 3, 2, 3, 4, 4, 2, 3, 3, 2, 5, 6, 4, 3, 3]
   },
   {
-    "id": 0,
-    "player": "Steph",
+    "id": 3,
+    "name": "Steph",
     "scoreArray": [3, 4, 3, 5, 3, 2, 3, 4, 4, 2, 3, 3, 2, 5, 6, 4, 3, 3]
   },
 ]
