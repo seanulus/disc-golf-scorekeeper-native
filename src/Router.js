@@ -5,7 +5,7 @@ import Welcome from './components/Welcome';
 const RouterComponent = () => {
   return (
     <Router>
-      <Scene key='root'>
+      <Scene key='root' hideNavBar>
         <Scene key='home'>
           <Scene key='welcome' component={Welcome} title='DGSK' initial />
         </Scene>
@@ -14,4 +14,4 @@ const RouterComponent = () => {
   );
 };
 
-export default Router;
+export default RouterComponent;
