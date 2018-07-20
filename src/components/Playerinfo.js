@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, TouchableWithoutFeedback, View, LayoutAnimation } from 'react-native';
 import { connect } from 'react-redux';
-import { HoleCardSection } from './common';
+import { HoleCardSection, CardSection } from './common';
 import * as actions from '../actions';
 import _ from 'lodash';
 
@@ -9,7 +9,7 @@ class PlayerInfo extends Component {
   componentWillUpdate() {
     LayoutAnimation.easeInEaseOut();
   }
-
+// Try to set this up in a separate HoleList/Info Component Structure
   renderScores() {
     const { player, expanded } = this.props;
 
@@ -36,7 +36,7 @@ class PlayerInfo extends Component {
 
     return (
       <TouchableWithoutFeedback onPress={() => this.props.selectPlayer(id)}>
-        <View>
+        <View style={styles.containerStyle}>
           <HoleCardSection>
             <Text style={styles.playerTextStyle}>{name}</Text>
             <Text style={styles.playerTextStyle}>
@@ -54,6 +54,11 @@ const styles = {
   playerTextStyle: {
     fontSize: 24,
     fontWeight: '400',
+  },
+  containerStyle: {
+    borderBottomWidth: 1,
+    padding: 5,
+    marginBottom: 3
   }
 }
 
