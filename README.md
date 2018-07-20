@@ -10,6 +10,9 @@
   * This app should allow players to update/edit their scores for each hole.
   * This app should allow users to compare scores.
 
+## Component Tree
+
+![Sketch](https://github.com/seanulus/disc-golf-scorekeeper-native/blob/master/src/assets/images/Component-Tree-Capstone.jpg?raw=true)
 
 ## Setup/Installation Requirements
 
@@ -18,7 +21,8 @@
 * Install Xcode
 * Install watchman
 * Install React Native
-* Open terminal, navigate to project root directory and run npm install.
+* Open terminal, navigate to project root directory and run `npm install`.
+* Run `react-native run-ios` to open live simulator
 
 
 
@@ -35,6 +39,7 @@ Run `react-native run-ios` for a simulator. Run `npm start` to start the server 
 
 * HTML
 * CSS
+* React
 * React Native
 * Javascript
 
