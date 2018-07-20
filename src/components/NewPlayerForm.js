@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 const NewPlayerForm = () => {
   return (
     <View>
-      <Text></Text>
+      <Text>New Player Form</Text>
     </View>
   );
 }

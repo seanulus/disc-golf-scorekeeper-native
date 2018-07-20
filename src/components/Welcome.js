@@ -1,13 +1,20 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Button } from './common';
+import { Actions } from 'react-native-router-flux';
+import { Button, Card, CardSection } from './common';
 
 const Welcome = () => {
   return (
     <View style={styles.welcomeStyle}>
-      <Text style={styles.welcomeTextStyle}>Welcome to Rllr</Text>
-      <Text>A disc golf score keeper</Text>
-      <Button />
+      <Card>
+        <Text style={styles.welcomeTextStyle}>Welcome to Rllr</Text>
+        <Text style={styles.smallTextStyle}>A disc golf score keeper</Text>
+        <CardSection>
+          <Button onPress={() => Actions.addPlayer()}>
+            Get Started
+          </Button>
+        </CardSection>
+      </Card>
     </View>
   );
 }
@@ -21,6 +28,10 @@ const styles = {
   welcomeTextStyle: {
     fontSize: 40,
     fontWeight: '600',
+  },
+  smallTextStyle: {
+    textAlign: 'center',
+    marginBottom: 30
   }
 }
 
