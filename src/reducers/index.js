@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import PlayerFormReducer from './PlayerFormReducer';
+import SelectedPlayerReducer from './SelectedPlayerReducer';
 
 export default combineReducers ({
-  playerForm: PlayerFormReducer
+  players: PlayerFormReducer,
+  selectedPlayerId: SelectedPlayerReducer
 });

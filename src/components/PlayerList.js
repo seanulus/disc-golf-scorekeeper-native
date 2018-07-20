@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, ListView } from 'react-native';
 import { connect } from 'react-redux';
+import PlayerInfo from './PlayerInfo';
 
 class PlayerList extends Component {
   componentWillMount() {
@@ -27,7 +28,7 @@ class PlayerList extends Component {
 }
 
 const mapStateToProps = state => {
-  return { player: state.players };
+  return { players: state.players };
 }
 
 export default connect(mapStateToProps)(PlayerList);
