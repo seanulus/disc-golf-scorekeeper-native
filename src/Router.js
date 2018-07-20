@@ -6,7 +6,7 @@ import PlayerList from './components/PlayerList';
 
 const RouterComponent = () => {
   return (
-    <Router navigationBarStyle={{ backgroundColor: 'grey'}} titleStyle={{ color: 'white' }} navBarButtonColor={{ 'transparent' }}>
+    <Router navigationBarStyle={{ backgroundColor: 'grey'}} titleStyle={{ color: 'white' }} navBarButtonColor={ 'white' }>
       <Scene key='root' hideNavBar>
         <Scene key='home'>
           <Scene key='welcome' component={Welcome} title='RLLR' initial />

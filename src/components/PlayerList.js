@@ -3,28 +3,30 @@ import { Text, View, ListView } from 'react-native';
 import { connect } from 'react-redux';
 
 class PlayerList extends Component {
-  // componentWillMount() {
-  //   const ds = new ListView.DataSource({
-  //     rowHasChanged: (r1, r2) => r1 !== r2
-  //   });
-  //
-  //   this.dataSource = ds.cloneWithRows(this.props.players);
-  // }
-  //
-  // renderRow(player) {
-  //   return <ListItem player={player} />
-  // }
+  componentWillMount() {
+    const ds = new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2
+    });
+
+    this.dataSource = ds.cloneWithRows(this.props.players);
+  }
+
+  renderRow(player) {
+    return <PlayerInfo player={player} />
+  }
 
   render() {
     return (
-      <View>
-        <Text>Player List</Text>
-      </View>
+      <ListView
+        dataSource={this.dataSource}
+        renderRow={this.renderRow}
+      />
+
     );
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
   return { player: state.players };
 }
 
