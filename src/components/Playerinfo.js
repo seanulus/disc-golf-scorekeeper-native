@@ -14,15 +14,16 @@ class PlayerInfo extends Component {
     const { player, expanded } = this.props;
 
       if(expanded) {
-        for (let i = 0; i <= player.scoreArray.length; i ++) {
-
-        return (
-          <CardSection>
-            <Text>
-              Hole {player.scoreArray[i] + 1}
-            </Text>
-          </CardSection>
-        )
+        console.log('Before: ' + player.scoreArray);
+        for (let i = 0; i < player.scoreArray.length; i ++) {
+        console.log('After: ' + player.scoreArray[i]);
+        // return (
+        //   <CardSection>
+        //     <Text>
+        //       Hole {player.scoreArray[i] + 1}
+        //     </Text>
+        //   </CardSection>
+        // )
       }
     }
   }
