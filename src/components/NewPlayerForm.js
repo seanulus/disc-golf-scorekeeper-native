@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import { Card, CardSection, Button, Input } from './common';
 
 class NewPlayerForm extends Component {
@@ -21,7 +22,7 @@ class NewPlayerForm extends Component {
         </CardSection>
 
         <CardSection>
-          <Button>
+          <Button onPress={() => Actions.playerList()}>
             Continue
           </Button>
         </CardSection>
