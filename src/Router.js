@@ -5,7 +5,7 @@ import NewPlayerForm from './components/NewPlayerForm';
 
 const RouterComponent = () => {
   return (
-    <Router>
+    <Router navigationBarStyle={{ backgroundColor: 'grey'}} titleStyle={{ color: 'white' }}>
       <Scene key='root' hideNavBar>
         <Scene key='home'>
           <Scene key='welcome' component={Welcome} title='RLLR' initial />
