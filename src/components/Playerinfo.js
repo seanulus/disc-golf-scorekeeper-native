@@ -10,21 +10,12 @@ class PlayerInfo extends Component {
   componentWillUpdate() {
     LayoutAnimation.easeInEaseOut();
   }
-// Try to set this up in a separate HoleList/Info Component Structure
+
   renderScores() {
     const { player, expanded } = this.props;
 
       if(expanded) {
-        return <HoleList player={player} />
-      //   for (let i = 0; i < player.scoreArray.length; i ++) {
-      //   return (
-      //     <CardSection>
-      //       <Text>
-      //         Hole {player.scoreArray[i]}
-      //       </Text>
-      //     </CardSection>
-      //   )
-      // }
+        return <HoleList player={player} />;
     }
   }
 

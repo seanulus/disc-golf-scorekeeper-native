@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import { Text, View, ListView } from 'react-native';
+import { Text, View, ListView, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { HoleCardSection } from './common';
 // import HoleInfo from './HoleInfo';
 
 class HoleList extends Component {
+
+  decrementScore(score) {
+    return score -= 1;
+  }
 
   renderHoles() {
     const { name, id, scoreArray } = this.props.player;
@@ -12,7 +16,10 @@ class HoleList extends Component {
     return scoreArray.map((score, index) =>
       <HoleCardSection key={index}>
         <Text style={styles.holeInfoStyle}>Hole {index + 1}</Text>
-        <Text style={styles.holeInfoStyle}>{score}</Text>
+        <Text style={styles.parStyle}>Par 3</Text>
+        <Text style={[styles.scoreStyle, styles.buttonStyle]} onPress={() => this.decrementScore({score})}>-</Text>
+        <Text style={styles.scoreStyle}>{score}</Text>
+        <Text style={[styles.scoreStyle, styles.buttonStyle]} onPress={() => console.log('increment')}>+</Text>
       </HoleCardSection>
     );
   }
@@ -27,7 +34,24 @@ class HoleList extends Component {
 const styles = {
   holeInfoStyle: {
     fontSize: 16,
-    fontWeight: '400'
+    fontWeight: '400',
+    flex: 2
+  },
+  scoreStyle: {
+    fontSize: 16,
+    fontWeight: '400',
+    flex: 1,
+    textAlign: 'center'
+  },
+  parStyle: {
+    fontSize: 16,
+    fontWeight: '400',
+    flex: 3
+  },
+  buttonStyle: {
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 10
   }
 }
 
