@@ -8,11 +8,11 @@ class HoleList extends Component {
 
   renderHoles() {
     const { name, id, scoreArray } = this.props.player;
-    console.log(name);
 
-    return scoreArray.map(score =>
-      <HoleCardSection>
-        <Text>{score}</Text>
+    return scoreArray.map((score, index) =>
+      <HoleCardSection key={index}>
+        <Text style={styles.holeInfoStyle}>Hole {index + 1}</Text>
+        <Text style={styles.holeInfoStyle}>{score}</Text>
       </HoleCardSection>
     );
   }
@@ -21,6 +21,13 @@ class HoleList extends Component {
     return (
       this.renderHoles()
     );
+  }
+}
+
+const styles = {
+  holeInfoStyle: {
+    fontSize: 16,
+    fontWeight: '400'
   }
 }
 
