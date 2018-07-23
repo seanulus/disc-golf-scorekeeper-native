@@ -13,7 +13,7 @@ class NewPlayerForm extends Component {
 
   onButtonPress() {
     const { name } = this.props;
-
+    
     this.props.playerCreate({ name });
   }
 
@@ -31,7 +31,7 @@ class NewPlayerForm extends Component {
         </CardSection>
 
         <CardSection>
-          <Button onPress={() => this.onButtonPress.bind(this)}>
+          <Button onPress={this.onButtonPress.bind(this)}>
             Add Player
           </Button>
         </CardSection>

@@ -30,7 +30,7 @@ class PlayerInfo extends Component {
       <TouchableWithoutFeedback onPress={() => this.props.selectPlayer(id)}>
         <View style={styles.containerStyle}>
           <HoleCardSection>
-            <Text style={styles.playerTextStyle}>{name}</Text>
+            <Text style={styles.playerTextStyle}>{name.name}</Text>
             <Text style={styles.playerTextStyle}>
               {this.totalScore(scoreArray) - 48}
             </Text>

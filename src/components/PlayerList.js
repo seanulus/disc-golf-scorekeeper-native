@@ -28,8 +28,10 @@ class PlayerList extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { players: state.players };
+const mapStateToProps = ({ playerList }) => {
+  const { players } = playerList;
+
+  return { players }
 }
 
 export default connect(mapStateToProps)(PlayerList);

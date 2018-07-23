@@ -4,7 +4,7 @@ import SelectedPlayerReducer from './SelectedPlayerReducer';
 import PlayerNameReducer from './PlayerNameReducer';
 
 export default combineReducers ({
-  players: PlayerCreateReducer,
+  playerList: PlayerCreateReducer,
   selectedPlayerId: SelectedPlayerReducer,
   playerName: PlayerNameReducer
 });
