@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { HoleCardSection, CardSection } from './common';
 import * as actions from '../actions';
 import _ from 'lodash';
+import HoleList from './HoleList';
 
 class PlayerInfo extends Component {
   componentWillUpdate() {
@@ -14,16 +15,16 @@ class PlayerInfo extends Component {
     const { player, expanded } = this.props;
 
       if(expanded) {
-        console.log('Before: ' + player.scoreArray);
-        for (let i = 0; i < player.scoreArray.length; i ++) {
-        return (
-          <CardSection>
-            <Text>
-              Hole {player.scoreArray[i]}
-            </Text>
-          </CardSection>
-        )
-      }
+        return <HoleList player={player} />
+      //   for (let i = 0; i < player.scoreArray.length; i ++) {
+      //   return (
+      //     <CardSection>
+      //       <Text>
+      //         Hole {player.scoreArray[i]}
+      //       </Text>
+      //     </CardSection>
+      //   )
+      // }
     }
   }
 
