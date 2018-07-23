@@ -1,9 +1,22 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
+import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import { Card, CardSection, Button, Input } from './common';
+import { nameChanged, playerCreate } from '../actions';
 
 class NewPlayerForm extends Component {
+
+  onNameChange(text) {
+    this.props.nameChanged(text);
+  }
+
+  onButtonPress() {
+    const { name } = this.props;
+
+    this.props.playerCreate({ name });
+  }
+
   render() {
     return (
       <View style={styles.containerStyle}>
@@ -12,11 +25,13 @@ class NewPlayerForm extends Component {
           <Input
             label='Name'
             placeholder='Name'
+            onChangeText={this.onNameChange.bind(this)}
+            value={this.props.name}
           />
         </CardSection>
 
         <CardSection>
-          <Button>
+          <Button onPress={() => this.onButtonPress.bind(this)}>
             Add Player
           </Button>
         </CardSection>
@@ -45,4 +60,10 @@ const styles = {
   }
 }
 
-export default NewPlayerForm;
+const mapStateToProps = ({ playerName }) => {
+  const { name } = playerName;
+
+  return { name }
+}
+
+export default connect(mapStateToProps, { nameChanged, playerCreate })(NewPlayerForm);

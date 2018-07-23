@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PlayerInfo from './PlayerInfo';
 
 class PlayerList extends Component {
+
   componentWillMount() {
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
