@@ -6,8 +6,10 @@ import { HoleCardSection } from './common';
 
 class HoleList extends Component {
 
-  decrementScore(score) {
-    return score -= 1;
+  decrementScore(index) {
+    const { scoreArray } = this.props.player;
+    console.log('In decrement function: ' + scoreArray[index] + ' This is the index: ' + index + ' This is a decrement: ' + (scoreArray[index] -= 1));
+    return scoreArray[index] - 1;
   }
 
   renderHoles() {
@@ -17,7 +19,7 @@ class HoleList extends Component {
       <HoleCardSection key={index}>
         <Text style={styles.holeInfoStyle}>Hole {index + 1}</Text>
         <Text style={styles.parStyle}>Par 3</Text>
-        <Text style={[styles.scoreStyle, styles.buttonStyle]} onPress={() => this.decrementScore({score})}>-</Text>
+        <Text style={[styles.scoreStyle, styles.buttonStyle]} onPress={() => this.decrementScore(index)}>-</Text>
         <Text style={styles.scoreStyle}>{score}</Text>
         <Text style={[styles.scoreStyle, styles.buttonStyle]} onPress={() => console.log('increment')}>+</Text>
       </HoleCardSection>

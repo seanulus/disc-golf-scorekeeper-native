@@ -16,15 +16,21 @@ export const nameChanged = (text) => {
 };
 
 export const playerCreate = (name) => {
-  console.log(name)
   return {
-    // dispatch({
-      type: PLAYER_CREATE,
-      payload: {
-        name: name.name,
-        scoreArray: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        id: v4()
-      }
-    // });
+    type: PLAYER_CREATE,
+    payload: {
+      name: name.name,
+      scoreArray: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      id: v4()
+    }
   };
 };
+
+// export const decrementScore = () => {
+//   return {
+//     type: DECREMENT_SCORE,
+//     payload: {
+//
+//     }
+//   }
+// }

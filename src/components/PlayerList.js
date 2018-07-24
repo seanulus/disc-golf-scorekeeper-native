@@ -6,7 +6,6 @@ import PlayerInfo from './PlayerInfo';
 class PlayerList extends Component {
 
   componentWillMount() {
-    console.log('Inside will mount: ' + this.props.playerList)
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     });
@@ -15,7 +14,6 @@ class PlayerList extends Component {
   }
 
   renderRow(player) {
-    console.log('Inside renderRows: ' + player)
     return <PlayerInfo player={player} />
   }
 
@@ -32,7 +30,7 @@ class PlayerList extends Component {
 
 const mapStateToProps = ({ players }) => {
   const { playerList } = players;
-  console.log('Inside mapStateToProps ' + JSON.stringify({playerList}))
+
   return { playerList }
 }
 

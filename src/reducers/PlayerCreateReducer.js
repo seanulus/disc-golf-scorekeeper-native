@@ -8,7 +8,6 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case PLAYER_CREATE:
-      console.log(state.playerList)
       return {
                 playerList: [
                     ...state.playerList,
