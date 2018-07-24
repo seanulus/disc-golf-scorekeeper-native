@@ -9,16 +9,21 @@ export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case PLAYER_CREATE:
       console.log(state.playerList)
-      return update(state, {
-        playerList: {$push: [action.payload]}
-      });
+      return {
+                playerList: [
+                    ...state.playerList,
+                    action.payload
+                ]
+            }
     default:
       return state;
   }
 }
 
 
-
+// return update(state, {
+//   playerList: {$push: [action.payload]}
+// });
 // import data from './PlayerList.json';
 //
 // export default () => data;

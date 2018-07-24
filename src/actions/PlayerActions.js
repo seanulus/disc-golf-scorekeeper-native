@@ -21,7 +21,7 @@ export const playerCreate = (name) => {
     // dispatch({
       type: PLAYER_CREATE,
       payload: {
-        name,
+        name: name.name,
         scoreArray: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         id: v4()
       }

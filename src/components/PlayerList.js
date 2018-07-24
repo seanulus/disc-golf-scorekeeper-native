@@ -6,14 +6,16 @@ import PlayerInfo from './PlayerInfo';
 class PlayerList extends Component {
 
   componentWillMount() {
+    console.log('Inside will mount: ' + this.props.playerList)
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     });
 
-    this.dataSource = ds.cloneWithRows(this.props.players);
+    this.dataSource = ds.cloneWithRows(this.props.playerList);
   }
 
   renderRow(player) {
+    console.log('Inside renderRows: ' + player)
     return <PlayerInfo player={player} />
   }
 
@@ -28,10 +30,10 @@ class PlayerList extends Component {
   }
 }
 
-const mapStateToProps = ({ playerList }) => {
-  const { players } = playerList;
-
-  return { players }
+const mapStateToProps = ({ players }) => {
+  const { playerList } = players;
+  console.log('Inside mapStateToProps ' + JSON.stringify({playerList}))
+  return { playerList }
 }
 
 export default connect(mapStateToProps)(PlayerList);
