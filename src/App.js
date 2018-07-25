@@ -5,12 +5,16 @@ import { Provider } from 'react-redux';
 import Router from './Router';
 import reducers from './reducers';
 
+const store = createStore(reducers)
 
+let unsubscribe = store.subscribe(() =>
+  store.getState()
+);
 
 class App extends Component {
   render() {
     return (
-      <Provider store={createStore(reducers)}>
+      <Provider store={store}>
           <Router />
       </Provider>
     );

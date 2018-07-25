@@ -15,7 +15,7 @@ class PlayerInfo extends Component {
     const { player, expanded } = this.props;
 
       if(expanded) {
-        return <HoleList player={player} />;
+        return <HoleList player={player}/>;
     }
   }
 
@@ -24,6 +24,7 @@ class PlayerInfo extends Component {
   }
 
   render() {
+    console.log(this.props.player)
     const { name, id, scoreArray } = this.props.player;
 
     return (
