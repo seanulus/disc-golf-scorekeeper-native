@@ -2,15 +2,12 @@ import React, { Component } from 'react';
 import { Text, View, ListView, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { HoleCardSection } from './common';
-import { decrementScore } from '../actions';
+import { decrementScore, incrementScore } from '../actions';
 
 
 class HoleList extends Component {
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   console.log('shouldComponentUpdate')
-  //   return nextProps.player.scoreArray !== this.props.player.scoreArray;
-  // }
+
 
   onDecrementScore(index) {
     const { scoreArray, name } = this.props.player;
@@ -18,8 +15,19 @@ class HoleList extends Component {
     return decrementScore(scoreArray, index);
   }
 
+  onIncrementScore(index) {
+    const { scoreArray, name } = this.props.player;
+
+    return incrementScore(scoreArray, index);
+  }
+
   scoreDown(index) {
     this.onDecrementScore(index);
+    this.forceUpdate();
+  }
+
+  scoreUp(index) {
+    this.onIncrementScore(index);
     this.forceUpdate();
   }
 
@@ -37,7 +45,7 @@ class HoleList extends Component {
 
           <Text style={styles.scoreStyle}>{score}</Text>
 
-          <Text style={[styles.scoreStyle, styles.buttonStyle]} onPress={() => console.log('increment')}>+</Text>
+          <Text style={[styles.scoreStyle, styles.buttonStyle]} onPress={() => this.scoreUp(index)}>+</Text>
         </HoleCardSection>
       )
     });
@@ -80,4 +88,4 @@ const styles = {
 //   return { playerList };
 // }
 
-export default connect(null, { decrementScore })(HoleList);
+export default connect(null, { decrementScore, incrementScore })(HoleList);

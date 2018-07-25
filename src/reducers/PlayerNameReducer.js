@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case NAME_CHANGED:
-      return { ...state, name: action.payload}
+      return { ...state, ...INITIAL_STATE, name: action.payload}
     default:
       return state;
   }

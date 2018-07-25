@@ -6,11 +6,17 @@ import PlayerInfo from './PlayerInfo';
 class PlayerList extends Component {
 
   componentWillMount() {
+    console.log('componentWillMount')
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     });
 
     this.dataSource = ds.cloneWithRows(this.props.playerList);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('shouldComponentUpdate')
+    return nextProps.playerList.scoreArray !== this.props.playerList.scoreArray;
   }
 
   renderRow(player) {

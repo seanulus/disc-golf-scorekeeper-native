@@ -13,7 +13,7 @@ class NewPlayerForm extends Component {
 
   onButtonPress() {
     const { name } = this.props;
-    
+
     this.props.playerCreate({ name });
   }
 

@@ -1,5 +1,5 @@
 import v4 from 'uuid';
-import { SELECTED_PLAYER, NAME_CHANGED, PLAYER_CREATE, DECREMENT_SCORE } from './types';
+import { SELECTED_PLAYER, NAME_CHANGED, PLAYER_CREATE, DECREMENT_SCORE, INCREMENT_SCORE } from './types';
 
 export const selectPlayer = (playerId) => {
   return {
@@ -27,9 +27,15 @@ export const playerCreate = (name) => {
 };
 
 export const decrementScore = (scoreArray, index) => {
-  console.log(scoreArray)
   return {
     type: DECREMENT_SCORE,
     payload: scoreArray[index] -= 1
+  }
+}
+
+export const incrementScore = (scoreArray, index) => {
+  return {
+    type: INCREMENT_SCORE,
+    payload: scoreArray[index] += 1
   }
 }

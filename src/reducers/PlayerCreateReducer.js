@@ -1,4 +1,4 @@
-import { PLAYER_CREATE, DECREMENT_SCORE } from '../actions/types';
+import { PLAYER_CREATE, DECREMENT_SCORE, INCREMENT_SCORE } from '../actions/types';
 import update from 'immutability-helper';
 
 const INITIAL_STATE = {
@@ -15,6 +15,10 @@ export default (state = INITIAL_STATE, action) => {
       return update(state, {
         playerList: {$apply: action.payload}
       });
+    case INCREMENT_SCORE:
+    return update(state, {
+      playerList: {$apply: action.payload}
+    });
     default:
       return state;
   }
