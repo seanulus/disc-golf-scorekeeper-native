@@ -27,6 +27,7 @@ export const playerCreate = (name) => {
 };
 
 export const decrementScore = (scoreArray, index) => {
+  console.log(scoreArray)
   return {
     type: DECREMENT_SCORE,
     payload: scoreArray[index] -= 1

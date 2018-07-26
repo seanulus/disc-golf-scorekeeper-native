@@ -11,6 +11,13 @@ class PlayerInfo extends Component {
     LayoutAnimation.easeInEaseOut();
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log(this.props.player.scoreArray)
+    console.log(nextProps.player.scoreArray)
+    return true;
+    // return nextProps.player.scoreArray !== this.props.player.scoreArray;
+  }
+
   renderScores() {
     const { player, expanded } = this.props;
 

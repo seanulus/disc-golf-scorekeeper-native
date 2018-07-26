@@ -13,11 +13,13 @@ export default (state = INITIAL_STATE, action) => {
     });
     case DECREMENT_SCORE:
       return update(state, {
-        playerList: {$apply: action.payload}
+        playerList: [
+          {$apply: action.payload}
+        ]
       });
     case INCREMENT_SCORE:
     return update(state, {
-      playerList: {$apply: action.payload}
+      playerList: {$set: action.payload}
     });
     default:
       return state;

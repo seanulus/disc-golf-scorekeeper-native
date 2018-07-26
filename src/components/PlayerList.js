@@ -14,11 +14,6 @@ class PlayerList extends Component {
     this.dataSource = ds.cloneWithRows(this.props.playerList);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log('shouldComponentUpdate')
-    return nextProps.playerList.scoreArray !== this.props.playerList.scoreArray;
-  }
-
   renderRow(player) {
     return <PlayerInfo player={player} />
   }
